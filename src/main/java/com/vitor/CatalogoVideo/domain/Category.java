@@ -9,6 +9,18 @@ public class Category {
     private String description;
     private Boolean isActive = true;
 
+    public Category(UUID id, String name, String description, Boolean isActive) throws Exception{
+        this.setId(id);
+        this.setName(name);
+        this.setDescription(description);
+    }
+
+    public Category(String name, String description) throws Exception{
+        this.id = UUID.randomUUID();
+        this.setName(name);
+        this.setDescription(description);
+    }
+
     public UUID getId() {
         return this.id;
     }
