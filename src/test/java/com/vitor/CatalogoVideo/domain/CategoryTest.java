@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -83,4 +84,15 @@ public class CategoryTest {
         assertEquals(entity.getName(), "Updated name");
         assertEquals(entity.getDescription(), "Updated description");
     }
+
+    @Test
+    public void throwDomainExceptionWhenNameIsNull(){
+        assertThrows(DomainException.class, () -> new Category(null, "Any description"));
+    }
+
+    @Test
+    public void throwDomainExceptionWhenNameIsBlank(){
+        assertThrows(DomainException.class, () -> new Category("", "Any description"));
+    }
+
 }
