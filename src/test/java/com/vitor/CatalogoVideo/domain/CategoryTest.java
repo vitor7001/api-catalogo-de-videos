@@ -63,4 +63,24 @@ public class CategoryTest {
         assertFalse(entity.getIsActive());
         
     }
+
+    @Test
+    public void createCategoryAndUpdate() throws Exception{
+        final Category entity = new Category(
+            "Any name",
+            "Any description"
+        );
+
+        assertNotNull(entity);
+        assertTrue(entity.getIsActive());
+        assertEquals(entity.getName(), "Any name");
+        assertEquals(entity.getDescription(), "Any description");
+
+        entity.update("Updated name", "Updated description", false);
+
+        assertNotNull(entity);
+        assertFalse(entity.getIsActive());
+        assertEquals(entity.getName(), "Updated name");
+        assertEquals(entity.getDescription(), "Updated description");
+    }
 }
