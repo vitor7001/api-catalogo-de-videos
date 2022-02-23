@@ -9,13 +9,13 @@ public class Category {
     private String description;
     private Boolean isActive = true;
 
-    public Category(UUID id, String name, String description, Boolean isActive) throws Exception{
+    public Category(UUID id, String name, String description, Boolean isActive){
         this.setId(id);
         this.setName(name);
         this.setDescription(description);
     }
 
-    public Category(String name, String description) throws Exception{
+    public Category(String name, String description){
         this.id = UUID.randomUUID();
         this.setName(name);
         this.setDescription(description);
@@ -33,12 +33,12 @@ public class Category {
         return this.name;
     }
 
-    public void setName(String name) throws Exception {
+    public void setName(String name){
         if(name == null){
-            throw new Exception("Can not be null");
+            throw new NotNullException("Can not be null");
         }
         if(name.isEmpty()){
-            throw new Exception("Can not be blank");
+            throw new NotBlankException("Can not be blank");
         }
         this.name = name;
     }
@@ -63,7 +63,7 @@ public class Category {
         return this.isActive = true;
     }
 
-    public void update(String name, String description, Boolean isActive) throws Exception{
+    public void update(String name, String description, Boolean isActive){
         this.setName(name);
         this.setDescription(description);
         if(isActive != null && isActive != this.getIsActive()){

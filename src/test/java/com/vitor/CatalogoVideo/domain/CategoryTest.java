@@ -16,7 +16,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 public class CategoryTest {
     
     @Test
-    public void createCategoryWithNameAndDescription() throws Exception{
+    public void createCategoryWithNameAndDescription(){
         final Category entity = new Category(
             "Any name",
             "Any description"
@@ -28,7 +28,7 @@ public class CategoryTest {
     }
 
     @Test
-    public void createCategoryWithNameAndDescriptionIsNuLL() throws Exception{
+    public void createCategoryWithNameAndDescriptionIsNuLL(){
         final Category entity = new Category(
             "Any name",
             null
@@ -40,7 +40,7 @@ public class CategoryTest {
     }
 
     @Test
-    public void createCategoryAndActive() throws Exception{
+    public void createCategoryAndActive(){
         final Category entity = new Category(
             "Any name",
             "Any description"
@@ -52,7 +52,7 @@ public class CategoryTest {
     }
 
     @Test
-    public void createCategoryAndIsDeactivated() throws Exception{
+    public void createCategoryAndIsDeactivated(){
         final Category entity = new Category(
             "Any name",
             "Any description"
@@ -65,7 +65,7 @@ public class CategoryTest {
     }
 
     @Test
-    public void createCategoryAndUpdate() throws Exception{
+    public void createCategoryAndUpdate(){
         final Category entity = new Category(
             "Any name",
             "Any description"
