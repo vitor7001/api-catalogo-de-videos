@@ -34,15 +34,12 @@ public class Category {
     }
 
     public void setName(String name) throws Exception {
-
         if(name == null){
             throw new Exception("Can not be null");
         }
-
         if(name.isEmpty()){
             throw new Exception("Can not be blank");
         }
-
         this.name = name;
     }
 
@@ -64,5 +61,17 @@ public class Category {
 
     public Boolean active(){
         return this.isActive = true;
+    }
+
+    public void update(String name, String description, Boolean isActive) throws Exception{
+        this.setName(name);
+        this.setDescription(description);
+        if(isActive != null && isActive != this.getIsActive()){
+            if(isActive == true){
+                this.active();
+            }else{
+                this.deactivate();
+            }
+        }
     }
 }
