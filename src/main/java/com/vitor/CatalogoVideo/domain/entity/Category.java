@@ -1,6 +1,9 @@
-package com.vitor.CatalogoVideo.domain;
+package com.vitor.CatalogoVideo.domain.entity;
 
 import java.util.UUID;
+
+import com.vitor.CatalogoVideo.domain.exception.NotBlankException;
+import com.vitor.CatalogoVideo.domain.exception.NotNullException;
 
 public class Category {
 

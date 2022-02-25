@@ -1,4 +1,4 @@
-package com.vitor.CatalogoVideo.domain;
+package com.vitor.CatalogoVideo.domain.exception;
 
 public class DomainException extends RuntimeException {
     
